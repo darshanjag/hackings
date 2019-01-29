@@ -1,0 +1,47 @@
+//write a program to implement a selection menu using do while loop
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	var a=10;
+	var b=5;
+	
+
+	
+	var answer=0;
+	var x=1;
+
+	 var y; 
+	 y=prompt("enter a number, 1 to 5");
+	
+
+do{
+
+
+if(y==1){
+answer = a+b;
+console.log("answer is:"+answer);
+}
+else if(y==2){
+answer = a-b;
+console.log("answer is:"+answer);
+}
+else if(y==3){
+answer =a*b;
+console.log("answer is:"+answer);
+}
+else if(y==4){
+answer =a/b;
+console.log("answer is:"+answer);
+}
+else if(y==5){
+break;
+}
+x++;
+}while(x>2)
+</script>
+</body>
+</html>
