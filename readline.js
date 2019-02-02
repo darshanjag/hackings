@@ -1,11 +1,13 @@
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-rl.question('What do you think of Node.js? ', (answer) => {
-  // TODO: Log the answer in a database
-  console.log(`Thank you for your valuable feedback: ${answer}`);
-
-  rl.close();
-});
+    const readline = require('readline');
+    let rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    rl.question("enter the radius",function(radius){
+    	r=radius;
+    	console.log(r);
+    	rl.close();
+    });
+   
+    
+    
