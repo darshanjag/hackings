@@ -22,8 +22,8 @@ table, td {
   <td>1</td>
   <td id="descri" contenteditable="true"></td>
   <td id="rate" contenteditable="true"></td>
-  <td id="quan"   contenteditable="true"></td>
-  <td id="price"  contenteditable="true"></td>
+  <td id="quan" oninput="pricee()"  contenteditable="true"></td>
+  <td id="price"></td>
 </tr>
 </table>
 <br>
@@ -82,10 +82,19 @@ function myFunction() {
   cell2.setAttribute('contentEditable', 'true');
   cell3.setAttribute('contentEditable', 'true');
   cell4.setAttribute('contentEditable', 'true');
-  cell5.setAttribute('contentEditable', 'true');
+  cell4.setAttribute('oninput','pricee()');
 }
 
 var z = document.getElementById("myTable").rows.length;
+function pricee(){
+
+   let quantity=(table.rows[i].cells[3].innerHTML);
+   let rate=(table.rows[i].cells[2].innerHTML);
+   Price=rate*quantity;
+   console.log(Price);
+   table.rows[i].cells[4].innerHTML=Price;
+     
+  }
 function submit(){
 
 
