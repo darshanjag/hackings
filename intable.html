@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table id="myTable">
+  <tr>
+    <th>item</th>
+    <th>description</th>
+    <th>rate</th>
+    <th>quantity </th>
+    <th>price</th>
+    
+  </tr>
+  <tr id="somerow">
+  <td>1</td>
+  <td id="descri" contenteditable="true"></td>
+  <td id="rate" contenteditable="true"></td>
+  <td id="quan"   contenteditable="true"></td>
+  <td id="price"  contenteditable="true"></td>
+</tr>
+</table>
+<br>
+
+<button onclick="myFunction()">+</button>
+
+<button input="submit" onclick="submit()">submit</button>
+<script>
+  var i=1;
+  var j=2;
+  var k=3;
+var table = document.getElementById("myTable"),rIndex,cIndex;
+
+
+
+var rate = parseInt(document.getElementById("rate").innerHTML);
+
+    
+var quan = parseInt(document.getElementById("quan").innerHTML);
+
+
+
+var price = parseInt(document.getElementById("price").innerHTML);
+
+var Row = document.getElementById("somerow");
+
+var Cells = Row.getElementsByTagName("td");	
+
+var x = document.getElementById("myTable").rows.length;
+
+
+  // function pricee(){
+  //   var Price= Rate*Quan;
+  //   var Prices= Price.toString(10);
+  //   Row.insertCell(4).innerHTML=Prices;
+  // }
+function myFunction() {
+  i++;
+  j++;
+  k++;
+
+  
+  var row = table.insertRow(i);
+  // var row2 =table.insertRow(i+1);  var cell7 = row2.insertCell(0);
+  var cell1 = row.insertCell(0);
+
+  var cell2 = row.insertCell(1);
+
+  var cell3 = row.insertCell(2);
+
+  var cell4 = row.insertCell(3);
+
+  var cell5 = row.insertCell(4);
+  var total= parseInt(cell5.innerHTML);
+  cell1.innerHTML=i;
+  cell2.setAttribute('contentEditable', 'true');
+  cell3.setAttribute('contentEditable', 'true');
+  cell4.setAttribute('contentEditable', 'true');
+  cell5.setAttribute('contentEditable', 'true');
+}
+
+var z = document.getElementById("myTable").rows.length;
+function submit(){
+
+
+//   console.log(total);
+console.log(i);
+for(let m=0;m<z-1;m++){
+
+var Newval= parseInt(document.getElementById("myTable").rows[i].cells[4].innerHTML);
+
+if(i==1){
+  total=Newval;
+}else{
+  total=total+Newval;
+}
+}
+
+
+
+  var row2= table.insertRow(j);
+  var cell7 = row2.insertCell(0);
+  var cell8 = row2.insertCell(1);
+  var cell9 = row2.insertCell(2);
+  var cell10 = row2.insertCell(3);
+  var cell6 = row2.insertCell(4);
+
+  cell7.innerHTML="";
+  cell8.innerHTML="";
+  cell9.innerHTML="";
+  cell10.innerHTML="";
+
+  cell6.innerHTML="total:"+total;
+
+  document.getElementById("myTable").deleteRow(k);
+}
+</script>
+</body>
+</html>
