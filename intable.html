@@ -97,17 +97,18 @@ function pricee(){
   }
 function submit(){
 
-
 //   console.log(total);
 console.log(i);
 for(let m=0;m<z-1;m++){
 
 var Newval= parseInt(document.getElementById("myTable").rows[i].cells[4].innerHTML);
 
+
 if(i==1){
   total=Newval;
 }else{
-  total=total+Newval;
+	var Newval1= parseInt(document.getElementById("myTable").rows[i-1].cells[4].innerHTML);
+  total=Newval1+Newval;
 }
 }
 
