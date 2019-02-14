@@ -39,7 +39,7 @@ table, td {
   <td>1</td>
   <td id="descri" contenteditable="true"></td>
   <td id="rate" contenteditable="true"></td>
-  <td id="quan" oninput="pricee()"  contenteditable="true"></td>
+  <td id="quan" oninput="pricee()" onchange="pricee()" contenteditable="true"></td>
   <td id="price"></td>
 </tr>
 </table>
@@ -100,6 +100,7 @@ function myFunction() {
   cell3.setAttribute('contentEditable', 'true');
   cell4.setAttribute('contentEditable', 'true');
   cell4.setAttribute('oninput','pricee()');
+  cell4.setAttribute('onchange','pricee()');
   document.getElementById("myTable").rows[1].cells[4].setAttribute('oninput','pricee()');
   var z = document.getElementById("myTable").rows.length;
 }
