@@ -83,9 +83,10 @@ function myFunction() {
   cell3.setAttribute('contentEditable', 'true');
   cell4.setAttribute('contentEditable', 'true');
   cell4.setAttribute('oninput','pricee()');
+  var z = document.getElementById("myTable").rows.length;
 }
 
-var z = document.getElementById("myTable").rows.length;
+
 function pricee(){
 
    let quantity=(table.rows[i].cells[3].innerHTML);
@@ -95,21 +96,17 @@ function pricee(){
    table.rows[i].cells[4].innerHTML=Price;
      
   }
+
+
+  total=firstval;
 function submit(){
 
-//   console.log(total);
-console.log(i);
-for(let m=0;m<z-1;m++){
 
-var Newval= parseInt(document.getElementById("myTable").rows[i].cells[4].innerHTML);
+var total=0;
+for(let k=1;k<=i;k++){
+var Newval= parseInt(document.getElementById("myTable").rows[k].cells[4].innerHTML);
+total=total+Newval;
 
-
-if(i==1){
-  total=Newval;
-}else{
-	var Newval1= parseInt(document.getElementById("myTable").rows[i-1].cells[4].innerHTML);
-  total=Newval1+Newval;
-}
 }
 
 
