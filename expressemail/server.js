@@ -25,7 +25,7 @@ app.post('/',function(req,res){
     secure: true, // true for 465, false for other ports
     auth: {
       user: Email, // generated ethereal user
-      pass: "someonekillthedj" // generated ethereal password
+      pass: your password // generated ethereal password
     }
   });
  let mailOptions = {
