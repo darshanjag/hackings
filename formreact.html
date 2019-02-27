@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+<body>
+	<div id="form"></div>
+
+
+</body>
+<script type="text/babel">
+		class App extends React.Component{
+			render(){
+				return(
+					<form>	
+  name:<br></br>
+  <input type="text" name="name"></input><br></br>
+						email:<br></br>
+  <input type="email" name="email"></input><br></br>
+  phone:<br></br>
+  <input type="text" name="phone"></input><br></br>
+
+
+					</form>
+				)
+		}
+
+	}
+
+
+ ReactDOM.render(<App />,document.getElementById("form"));
+	</script>
+</html>
