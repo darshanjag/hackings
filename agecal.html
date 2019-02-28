@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+	body, html {
+  height: 100%;
+  
+}
+
+.containerr{ 
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+font-family: 'ZCOOL QingKe HuangYou', cursive;
+  /* Full height */
+  height: 100%; 
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="containerr" style="background-color: black;">
+	<h1 style=" font-size: 70px; text-align: center;">age calculator </h1>
+<form id="myDate" class="form-group">
+	<div class="centered">
+  <h3>Birthday:</h3>
+  <input type="date" id="date-input" class="form-control"/>
+        <input type="button" id="submit" value="submit" class="form-control"/>
+    </form>
+    <h3 id="year"></h3>
+	<h3 id="month" ></h3>
+	<h3 id="date"></h3>
+	
+	</div>
+	
+</div>
+
+
+<script type="text/javascript">
+$("#prospects_form").submit(function(e) {
+    e.preventDefault();
+});
+  $('#submit').on('click', function(){
+  var date = new Date($('#date-input').val());
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  var datee=new Date(Date.now());
+
+    var birthday =new Date();
+	birthday.setFullYear(year, month, day);
+	var agedif = Date.now()-birthday.getTime();
+	var ageDate = new Date(agedif);
+	var age=(Math.abs(ageDate.getFullYear()-1970));
+// if(date.getMonth<month ){
+  var newYear=datee.getFullYear()-1;
+  var newY = new Date();
+  newY.setFullYear(newYear, month, day);
+  console.log(newY);
+  var newMonths =datee.getMonth() - newY.getMonth() 
+    + (12 * (datee.getFullYear() - newY.getFullYear()));
+  if(date.getDate() > newY.getDate()){
+  	console.log("greater");
+    newMonths=newMonths+1;
+}
+
+  // }
+document.getElementById("year").innerHTML="age: "+age+" months: "+newMonths;
+
+	var months = date.getMonth() - birthday.getMonth() 
+    + (12 * (date.getFullYear() - birthday.getFullYear()));
+
+if(date.getDate() < birthday.getDate()){
+    months--;
+}
+document.getElementById("month").innerHTML="months: "+months;
+var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+
+// var secondDate = new Date(2008,01,22);
+
+var diffDays = Math.round(Math.abs((birthday.getTime() - date.getTime())/(oneDay)));
+document.getElementById("date").innerHTML="days: "+diffDays;
+ 
+});
+	
+function getAge(){
+
+
+}
+
+</script>
+</body>
+</html>
