@@ -1,195 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-    <style>
-    .ui-page .ui-content {
-    padding:0;
-}
-.ui-content * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.ui-content .progress {
-    display: flex;
-    display: -webkit-flex;
-    flex-flow: row nowrap;
-    -webkit-flex-flow: row nowrap;
-    justify-content: space-around;
-    -webkit-justify-content: space-around;
-    width: 100%;
-    background: skyblue;
-    align-items: center;
-    padding: .5em;
-}
-.ui-content .progress * {
-    margin: 0;
-}
-.ui-content .progress p {
-    background: lightblue;
-    height: 22px;
-    width: 22px;
-    border-radius: 22px;
-    text-align: center;
-}
-.ui-content .progress .line {
-    border-top: 1px solid black;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-/* steps */
- .ui-content .steps {
-    padding: 1em;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.progress .currentStep {
-    background: tomato !important;
-    font-weight: bold;
-}
-    </style>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<html>
-   
-            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-            <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-            <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-            <script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-        </head>
-        
-        <body>
-            <div data-role="page" id="wizard">
-                <div data-role="header" data-tap-toggle="false" data-position="fixed">
-                     <h1>Wizard</h1>
-    
-                </div>
-                <div role="main" class="ui-content">
-                                  <div class="progress">
-                        <p>1</p>
-                        <div class="line"></div>
-                        <p>2</p>
-                        <div class="line"></div>
-                        <p>3</p>
-                        <div class="line"></div>
-                        <p>4</p>
-                        <div class="line"></div>
-                        <p>5</p>
-                    </div>
-                  <h3 style="text-align:center;">Swipe left or right</h3>
-                    <div class="steps">
-                        <div class="step">
-                            <div class="ui-body ui-body-a ui-corner-all">
-                                
-    <h3>Step 1</h3>
-    
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="ui-body ui-body-a ui-corner-all">
-                                
-    <h3>Step 2</h3>
-    
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="ui-body ui-body-a ui-corner-all">
-                                
-    <h3>Step 3</h3>
-    
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="ui-body ui-body-a ui-corner-all">
-                                
-    <h3>Step 4</h3>
-    
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <div class="ui-body ui-body-a ui-corner-all">
-                                
-    <h3>Step 5</h3>
-    
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-role="footer" data-tap-toggle="false" data-position="fixed">
-                     <h1>Wizard</h1>
-    
-                </div>
-                 <h3>Step 5</h3>
-    
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-role="footer" data-tap-toggle="false" data-position="fixed">
-                     <h1>Wizard</h1>
-    
-                </div>
-                
-            </div>
-        </body>
-    
-    </html>, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script>
-    $(document).on("pagecreate", "#wizard", function () {
-    $(".step").not(":eq(0)").addClass("ui-screen-hidden");
-    $(".step:eq(0)").addClass("active");
-    $(".progress p:eq(0)").addClass("currentStep");
-    $(".ui-content").on("swipeleft swiperight", function (e) {
-        var swipe = e.type,
-            nextStep = $(".steps").find(".active").next(".step"),
-            prevStep = $(".steps").find(".active").prev(".step");
-        switch (true) {
-            case (swipe == "swipeleft" && nextStep.length > 0):
-                $(".step.active")
-                    .toggleClass("slide out");
-                break;
-            case (swipe == "swiperight" && prevStep.length > 0):
-                $(".step.active")
-                    .toggleClass("slide out reverse");
-                break;
-        }
-    });
-}).on("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ".step", function (e) {
-    var elm = $(e.target);
-    switch (true) {
-        case (elm.hasClass("out") && !elm.hasClass("reverse")):
-            $(elm).toggleClass("slide out ui-screen-hidden active");
-            $(elm).next(".step").toggleClass("slide in active ui-screen-hidden");
-            break;
-        case (elm.hasClass("out") && elm.hasClass("reverse")):
-            $(elm).toggleClass("slide out ui-screen-hidden reverse active");
-            $(elm).prev(".step").toggleClass("slide in active reverse ui-screen-hidden");
-            break;
-        case (elm.hasClass("in") && !elm.hasClass("reverse")):
-            elm.toggleClass("slide in");
-            break;
-        case (elm.hasClass("in") && elm.hasClass("reverse")):
-            elm.toggleClass("slide in reverse");
-            break;
-    }
-    var dot = $(".active").index();
-    $("p:eq(" + dot + ")").prevAll("p").addBack().addClass("currentStep");
-    $("p:eq(" + dot + ")").nextAll("p").removeClass("currentStep");
-});
-    </script>
+    <title></title>
 </head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <body>
-    
+  <div class="container" id="myWizard">
+   <div class="navbar">
+      <div class="navbar-inner">
+            <ul class="nav nav-pills">
+               <li class="active"><a href="#step1" data-toggle="tab">Step 1</a></li>
+               <li><a href="#step2" data-toggle="tab">Step 2</a></li>
+               <li><a href="#step3" data-toggle="tab">Step 3</a></li>
+               <li><a href="#step4" data-toggle="tab">Step 4</a></li>
+               <li><a href="#step5" data-toggle="tab">Step 5</a></li>
+               <li><a href="#step6" data-toggle="tab">Step 6</a></li>
+               <li><a href="#step7" data-toggle="tab">Step 7</a></li>
+               <li><a href="#step8" data-toggle="tab">Step 8</a></li>
+               <li><a href="#step9" data-toggle="tab">Step 9</a></li>
+           
+
+            </ul>
+      </div>
+   </div>
+   <div class="tab-content">
+      <div class="tab-pane active" id="step1">
+         <p>Here is the content for the first step...</p>
+         <a class="btn btn-default next" href="#">Continue</a>
+      </div>
+      <div class="tab-pane" id="step2">
+         <p>Here is the content for step 2...</p>
+         <a class="btn btn-default next" href="#">Continue</a>
+      </div>
+      <div class="tab-pane" id="step3">
+         <p>Here is the content for step 3...</p>
+         <a class="btn btn-default next" href="#">Continue</a>
+      </div>
+      <div class="tab-pane" id="step4">
+         <p>Here is the content for step 4...</p>
+         <a class="btn btn-default next" href="#">Continue</a>
+      </div>
+      <div class="tab-pane" id="step5">
+         <p>Here is the content for step 5 You're done.</p>
+         <a class="btn btn-success first" href="#">Continue</a>
+      </div>
+       <div class="tab-pane" id="step5">
+         <p>Here is the content for step 6 You're done.</p>
+         <a class="btn btn-success first" href="#">Continue</a>
+      </div>
+       <div class="tab-pane" id="step5">
+         <p>Here is the content for step 7 You're done.</p>
+         <a class="btn btn-success first" href="#">Continue</a>
+      </div>
+       <div class="tab-pane" id="step5">
+         <p>Here is the content for step 8  You're done.</p>
+         <a class="btn btn-success first" href="#">Continue</a>
+      </div>
+       <div class="tab-pane" id="step5">
+         <p>Here is the content for step 9  You're done.</p>
+         <a class="btn btn-success first" href="#">Start over</a>
+      </div>
+   </div>
+</div>
+<script type="text/javascript">
+    $('.next').click(function(){
+
+  var nextId = $(this).parents('.tab-pane').next().attr("id");
+  $('[href=#'+nextId+']').tab('show');
+
+})
+
+$('.first').click(function(){
+
+  $('#myWizard a:first').tab('show')
+
+})
+</script>
+
 </body>
 </html>
