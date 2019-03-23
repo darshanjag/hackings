@@ -17,18 +17,31 @@
                <li><a href="#step3" data-toggle="tab">Step 3</a></li>
                <li><a href="#step4" data-toggle="tab">Step 4</a></li>
                <li><a href="#step5" data-toggle="tab">Step 5</a></li>
-               <li><a href="#step6" data-toggle="tab">Step 6</a></li>
-               <li><a href="#step7" data-toggle="tab">Step 7</a></li>
-               <li><a href="#step8" data-toggle="tab">Step 8</a></li>
-               <li><a href="#step9" data-toggle="tab">Step 9</a></li>
-           
-
             </ul>
       </div>
    </div>
    <div class="tab-content">
       <div class="tab-pane active" id="step1">
-         <p>Here is the content for the first step...</p>
+      	<label>who are we creating for:
+          <div class="table1+">
+         <table id="table1">
+         	<tr>
+         		<th>line<th>
+         		<th>enter your preferences<th>
+         			
+         	<tr id="row1">
+
+         	<tr>
+         	<td>1<td>
+         	<td id="customer" contenteditable="true"><td>
+          
+         	<tr>
+        
+        </table>
+        </div>
+        <div class="button1">
+     	<button class="btn btn-success">+</button>
+      </div>
          <a class="btn btn-default next" href="#">Continue</a>
       </div>
       <div class="tab-pane" id="step2">
@@ -45,28 +58,13 @@
       </div>
       <div class="tab-pane" id="step5">
          <p>Here is the content for step 5 You're done.</p>
-         <a class="btn btn-success first" href="#">Continue</a>
+         <a class="btn btn-success first" href="#">start over</a>
       </div>
-       <div class="tab-pane" id="step5">
-         <p>Here is the content for step 6 You're done.</p>
-         <a class="btn btn-success first" href="#">Continue</a>
-      </div>
-       <div class="tab-pane" id="step5">
-         <p>Here is the content for step 7 You're done.</p>
-         <a class="btn btn-success first" href="#">Continue</a>
-      </div>
-       <div class="tab-pane" id="step5">
-         <p>Here is the content for step 8  You're done.</p>
-         <a class="btn btn-success first" href="#">Continue</a>
-      </div>
-       <div class="tab-pane" id="step5">
-         <p>Here is the content for step 9  You're done.</p>
-         <a class="btn btn-success first" href="#">Start over</a>
-      </div>
+      
    </div>
 </div>
 <script type="text/javascript">
-    $('.next').click(function(){
+$('.next').click(function(){
 
   var nextId = $(this).parents('.tab-pane').next().attr("id");
   $('[href=#'+nextId+']').tab('show');
@@ -78,6 +76,11 @@ $('.first').click(function(){
   $('#myWizard a:first').tab('show')
 
 })
+var table1 = document.getElementById("table1"),rIndex,cIndex;
+var i=1;
+function addfun1(){
+var row = table1.insertRow(i);
+}
 </script>
 
 </body>
