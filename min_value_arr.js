@@ -22,5 +22,7 @@ for(let i=0;i<arr1.length;i++){
 	
 	if(arr1[i]*length>sum){
 		console.log(arr1[i]);
+		break;
 	}
+
 }
