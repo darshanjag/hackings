@@ -1,12 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'
+import ReactDom from 'react-dom'
 
-;
+function Myinfo(){
+    return(
+        <div>
+        <h1>darshan</h1>
+        <p>am darshan aim to be a web dev</p>
+        <ul>
+        <li>paris</li>
+        <li>vegas</li>
+        <li>Venice</li>
+        </ul>
+        </div>
+    )
+}
 
-ReactDOM.render(<ul><li>1</li><li>2</li><li>3</li></ul>, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 
+
+ReactDom.render(<Myinfo />,document.getElementById("root"))
