@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Todos from './components/Todos';
 import './App.css'
+import ReactDom from './components/react-dom'
 class App extends Component {
   state={
     todos: [
@@ -17,7 +18,9 @@ class App extends Component {
       {
         id:3,
         title : 'meeting with boss',
-        completed: false
+        completed: false  
+
+
       }
     ]
   }
@@ -25,7 +28,8 @@ class App extends Component {
     return (
       
       <div className="App">
-       <Todos todos={this.state.todos} />
+       <Todos todos={this.state.todos} /> 
+
       </div>
     );
   }
