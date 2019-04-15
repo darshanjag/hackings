@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
+    "eslint": "^5.15.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.19",
     "routes": "^2.1.0"
