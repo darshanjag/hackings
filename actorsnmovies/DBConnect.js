@@ -7,4 +7,5 @@ connection = mongoose.connect("mongodb://localhost:27017/actor",(err)=>{
     console.log("Connected to Database");
 });
 
+
 module.exports = connection;
