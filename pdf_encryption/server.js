@@ -3,6 +3,7 @@ var router = express.Router();
 var multer = require("multer");
 var bodyParser =require("body-parser");
 const port = 8080;
+var qpdf = require('node-qpdf');
 
 
 var app = express();
@@ -25,8 +26,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 app.post("/",upload.single("resume"), function (req, res) {  	
-  var filename = req.file.originalname
+if(req.body.password==req.body.Cpassword){
  var exec = require('child_process').exec;
+ 
  var cmd = `qpdf --encrypt test test 40 -- ./uploads/${req.file.filename} uploads/encrypted-${req.file.filename}`;
 
  exec(cmd, function (err){
@@ -35,7 +37,14 @@ app.post("/",upload.single("resume"), function (req, res) {
        }else{
           console.log('PDF encrypted :)');
        }
+      
  });
+}else{
+
+  res.redirect(req.get('referer'));
+ 
+}
+
 	res.json({"status":"sent"});
  
 	// Everything went fine.

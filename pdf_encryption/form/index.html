@@ -8,30 +8,50 @@
 </head>
 
 <body>
-	<h1>complaint form</h1>
-<form action="/" method="POST" enctype="multipart/form-data">
-  First name:<br>
-  <input type="text" name="name" >
-  <br>
-  email:<br>
+	<h1>pdf encryptor: enter your email and the password for the pdf</h1>
+<form action="/" method="POST" enctype="multipart/form-data" onSubmit = "return checkPassword(this)">
+  
+  your email:<br>
   <input type="text" name="email" >
   <br>
-  phone:<br>
-  <input type="text" name="phone" >
-  <br>
-  complaint:<br>
-  <textarea rows="4" cols="50" name="problem" >
-	</textarea>
-	<br>
- 	Reciept number:
-  <input type="text" name="recieptn" >
+ your password:<br>
+ <input type="password" name="password1" >
+ <br>
+ confirm password:<br>
+ <input type="password" name="password2"  >
   <br>
   <br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" onclick="nomatch()" >
   
-  <input type="file" name="resume" />
+  <input type="file" name="resume"  />
 
 </form> 
+<script type="text/javascript">
+  function checkPassword(form) { 
+                password1 = form.password1.value; 
+                password2 = form.password2.value; 
+  
+                // If password not entered 
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                      
+                // If confirm password not entered 
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                // If Not same return False.     
+                else if (password1 != password2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
+                // If same return True. 
+                else{ 
+                    alert("Password Matched: File sent.") 
+                    return true; 
+                } 
+            } 
+</script>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
