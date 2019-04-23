@@ -1,8 +1,6 @@
 var express = require("express");
 var router = express.Router();
 var multer = require("multer");
-var Email= "itsdarshanjagtap@gmail.com";
-const nodemailer = require("nodemailer");
 var bodyParser =require("body-parser");
 const port = 8080;
 var qpdf = require('node-qpdf');
@@ -28,21 +26,19 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 app.post("/",upload.single("resume"), function (req, res) {  	
+  var password = req.body.password
+  var options = {
+    keyLength: 128,
+    password: ""+password
+}
+localFilePath = `./uploads/${req.file.filename}`
+outputFilePath ='./uploads/'
+qpdf.encrypt(localFilePath, options);
 
-  var cmd = `qpdf --encrypt ${req.body.password1} ${req.body.password1}  40 -- ./uploads/${req.file.filename} uploads/encrypted-${req.file.filename}`;
 if(req.body.password==req.body.Cpassword){
- var exec = require('child_process').exec;
- console.log(req.body.password);
- 
 
- exec(cmd, function (err){
-       if (err){
-          console.error('Error occured: ' + err);
-       }else{
-          console.log('PDF encrypted :)');
-       }
-      
- });
+
+
 }else{
 
   res.redirect(req.get('referer'));
