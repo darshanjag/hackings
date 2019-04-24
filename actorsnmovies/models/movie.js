@@ -9,7 +9,7 @@ const movieSchema = new Schema({
     },
     actor:{
         type: Schema.Types.ObjectId,
-        ref: 'actor'
+        ref: 'actors'
     }
 });
-module.exports = mongoose.model('movie',movieSchema);
+module.exports = mongoose.model('movie',movieSchema,'movieCollection');

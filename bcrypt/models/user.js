@@ -22,7 +22,7 @@ var userSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('User',userSchema, 'user');
+module.exports = mongoose.model('User',userSchema, 'userinfo');
 
 
 //var dataSchema = new Schema({..}, { collection: 'data' })., The third parameter is the name of collection, first parameter is schemaname

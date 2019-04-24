@@ -15,4 +15,4 @@ const actorSchema= new Schema({
 
     ]
 });
-module.exports = mongoose.model('actor',actorSchema);
+module.exports = mongoose.model('actor',actorSchema,'actorCollection');
