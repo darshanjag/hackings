@@ -75,7 +75,6 @@ qpdf.encrypt(localFilePath, options,outputFilePath);
   res.redirect(req.get('referer'));
  
 }
-
 	res.json({"status":"sent"});
  
 	// Everything went fine.
