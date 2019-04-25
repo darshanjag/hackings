@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    title
+  body(style='border: 0; margin: 40px;')
+    | <
+    script(src='https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js')
+    link(type='text/css', rel='stylesheet', href='https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css')
+    script(type='text/javascript').
+      window.onload = function() {
+      placeSearch({
+      key: 'CTZEEW7z9Y8POYVlGKiqAl3iaGcidctk',
+      container:document.querySelector('#search-input'),
+      useDeviceLocation: true,
+      collection: [
+      'poi',
+      'airport',
+      'address',
+      'adminArea',
+      ]
+      });
+      placeSearch({
+      key: 'CTZEEW7z9Y8POYVlGKiqAl3iaGcidctk',
+      container:document.querySelector('#search-input2'),
+      useDeviceLocation: true,
+      collection: [
+      'poi',
+      'airport',
+      'address',
+      'adminArea',
+      ]
+      });
+      }
+    link(type='text/css', rel='stylesheet', href='https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css')
+    form(action='/', method='post')
+      input#search-input(type='search', placeholder='Start Searching...')
+      input#search-input2(type='search', placeholder='Start Searching...')
+      input(type='submit', name='submit')
+doctype html
+html
+  head
+    title
+  body(style='border: 0; margin: 40px;')
+    | <
+    script(src='https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js')
+    link(type='text/css', rel='stylesheet', href='https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css')
+    script(type='text/javascript').
+      window.onload = function() {
+      placeSearch({
+      key: 'CTZEEW7z9Y8POYVlGKiqAl3iaGcidctk',
+      container:document.querySelector('#search-input'),
+      useDeviceLocation: true,
+      collection: [
+      'poi',
+      'airport',
+      'address',
+      'adminArea',
+      ]
+      });
+      placeSearch({
+      key: 'CTZEEW7z9Y8POYVlGKiqAl3iaGcidctk',
+      container:document.querySelector('#search-input2'),
+      useDeviceLocation: true,
+      collection: [
+      'poi',
+      'airport',
+      'address',
+      'adminArea',
+      ]
+      });
+      }
+    link(type='text/css', rel='stylesheet', href='https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css')
+    form(action='/', method='post')
+      input#search-input(type='search', placeholder='Start Searching...')
+      input#search-input2(type='search', placeholder='Start Searching...')
+      input(type='submit', name='submit')

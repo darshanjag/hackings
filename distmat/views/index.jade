@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<<script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"/>
+
+    <script type="text/javascript">
+      window.onload = function() {
+        placeSearch({
+          key: 'CTZEEW7z9Y8POYVlGKiqAl3iaGcidctk',
+          container:document.querySelector('#search-input'),
+          useDeviceLocation: true,
+          collection: [
+            'poi',
+            'airport',
+            'address',
+            'adminArea',
+          ]
+        });
+         placeSearch({
+          key: 'CTZEEW7z9Y8POYVlGKiqAl3iaGcidctk',
+          container:document.querySelector('#search-input2'),
+          useDeviceLocation: true,
+          collection: [
+            'poi',
+            'airport',
+            'address',
+            'adminArea',
+          ]
+        });
+      }
+    </script>
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"/>
+<form action = "/" method="post">
+	 
+      <body style="border: 0; margin: 40px;">
+    <input type="search" id="search-input" placeholder="Start Searching..." />
+  </body>
+  <body style="border: 0; margin: 40px;">
+    <input type="search" id="search-input2" placeholder="Start Searching..." />
+  </body>
+	
+	<input type="submit" name="submit">
+</form>
+
+</body>
+</html>
