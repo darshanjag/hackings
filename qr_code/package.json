@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.16.4",
+    "jimp": "^0.6.2",
     "qrcode": "^1.3.3",
     "qrcode-reader": "^1.0.4"
   }
